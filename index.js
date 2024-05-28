@@ -12,7 +12,7 @@ connectionDB()
 app.use('/users', userRouter )
 app.use('/posts', postRouter )
 app.use('/comments', commentRouter )
-app.get('/', (req, res) => res.status(200).json({message:'Hello on my project!'}))
+app.get('/', (req, res) =>{ res.json({message:'Hello on my project!'})})
 
 app.use('*', (req, res) => res.status(404).json({msg:"404 page not found"}))
 app.listen(port, () => console.log(`server is running on port ${port}!`));
